@@ -19,9 +19,9 @@ class TryAgainActivity : FaceBaseActivity() {
         super.onCreate(bundle)
         setContentView(R.layout.face_enroll_try_again)
         setHeaderText(R.string.face_try_again_title)
-        getLayout().setDescriptionText(R.string.face_try_again_description)
+        getLayout()?.setDescriptionText(R.string.face_try_again_description)
 
-        val footerBarMixin = getLayout().getMixin(FooterBarMixin::class.java) as FooterBarMixin
+        val footerBarMixin = getLayout()?.getMixin(FooterBarMixin::class.java) as FooterBarMixin
         footerBarMixin.primaryButton =
             FooterButton.Builder(this)
                 .setText(R.string.btn_try_again)
@@ -39,8 +39,8 @@ class TryAgainActivity : FaceBaseActivity() {
         super.onApplyThemeResource(theme, resid, first)
     }
 
-    override fun getLayout(): GlifLayout {
-        return findViewById(R.id.face_enroll_try_again) as GlifLayout
+    override fun getLayout(): GlifLayout? {
+        return findViewById(R.id.face_enroll_try_again)
     }
 
     public override fun onPause() {
