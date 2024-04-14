@@ -196,7 +196,7 @@ open class EnrollActivity : FaceBaseActivity() {
     private fun init() {
         setContentView(R.layout.face_enroll)
         setHeaderText(R.string.face_enroll_title)
-        getLayout().setDescriptionText(R.string.face_enroll_description)
+        getLayout()?.setDescriptionText(R.string.face_enroll_description)
         mSurfaceView = findViewById(R.id.camera_surface)
         mProgress = 0.0f
         mSurfaceView?.setProgress(0.0f)
@@ -229,7 +229,7 @@ open class EnrollActivity : FaceBaseActivity() {
         mEnrollVendorMessage = findViewById(R.id.face_vendor_message)
     }
 
-    override fun getLayout(): GlifLayout {
+    override fun getLayout(): GlifLayout? {
         return findViewById(R.id.face_enroll)
     }
 

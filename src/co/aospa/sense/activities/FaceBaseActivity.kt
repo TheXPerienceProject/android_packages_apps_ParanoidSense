@@ -38,17 +38,17 @@ abstract class FaceBaseActivity : FragmentActivity() {
         intent.putExtra(Intent.EXTRA_USER_ID, mUserId)
     }
 
-    abstract fun getLayout(): GlifLayout
+    abstract fun getLayout(): GlifLayout?
 
     open fun setHeaderText(res: Int) {
-        val header: TextView = getLayout().headerTextView
-        val previous: CharSequence = header.text
+        val header: TextView? = getLayout()?.headerTextView
+        val previous: CharSequence? = header?.text
         val current = getText(res)
         if (previous !== current) {
             if (!TextUtils.isEmpty(current)) {
-                header.accessibilityLiveRegion = 1
+                header?.accessibilityLiveRegion = 1
             }
-            getLayout().headerText = current
+            getLayout()?.headerText = current
             title = current
         }
     }
