@@ -32,6 +32,8 @@ import vendor.aospa.biometrics.face.ISenseServiceReceiver
 
 class SenseService : Service() {
 
+    private lateinit var mIdleTimeoutIntent: PendingIntent
+    private lateinit var mLockoutTimeoutIntent: PendingIntent
     private var mAlarmManager: AlarmManager? = null
     private var mCameraAuthController: FaceAuthenticationController? = null
     private var mCameraEnrollController: FaceEnrollController? = null

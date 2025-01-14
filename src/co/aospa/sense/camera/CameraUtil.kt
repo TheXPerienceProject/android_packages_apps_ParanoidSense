@@ -33,6 +33,7 @@ object CameraUtil {
         if (cameraIdProp != null && cameraIdProp != "") {
             return cameraIdProp.toInt()
         }
+
         try {
             val cameraManager = context!!.getSystemService(
                 CameraManager::class.java
@@ -51,6 +52,7 @@ object CameraUtil {
         } catch (e: CameraAccessException) {
             e.printStackTrace()
         }
+
         return -1
     }
 }
