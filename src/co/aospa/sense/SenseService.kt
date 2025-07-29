@@ -39,8 +39,6 @@ class SenseService : Service() {
     private var mCameraEnrollController: FaceEnrollController? = null
     private var mCameraManager: CameraManager? = null
     private var mSenseReceiver: ISenseServiceReceiver? = null
-    private lateinit var mIdleTimeoutIntent: PendingIntent
-    private lateinit var mLockoutTimeoutIntent: PendingIntent
     private var mPreferenceHelper: PreferenceHelper? = null
     private var mService: SenseServiceWrapper? = null
     private var mVendorImpl: Vendor? = null
